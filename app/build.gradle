@@ -12,11 +12,18 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
     }
 
     buildTypes {
@@ -35,9 +42,13 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$rootProject.ext.nav_version"
     implementation "androidx.navigation:navigation-ui:$rootProject.ext.nav_version"
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
-
+    implementation "com.github.florent37:diagonallayout:$rootProject.ext.diagonallayout"
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.michaelgarnerdev.materialsearchview:materialsearchview:0.1.0@aar'
+
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

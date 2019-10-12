@@ -1,8 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.LanguageChoiseFragment">
 
-</FrameLayout>
+    <com.github.florent37.diagonallayout.DiagonalLayout
+        android:id="@+id/diagonalLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="240dp"
+        android:elevation="10dp"
+        app:diagonal_angle="10"
+        app:diagonal_direction="right"
+        app:diagonal_position="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/back" />
+
+    </com.github.florent37.diagonallayout.DiagonalLayout>
+
+    <ImageView
+        android:id="@+id/name"
+        android:layout_width="144dp"
+        android:layout_height="154dp"
+        android:layout_marginBottom="230dp"
+        android:elevation="12dp"
+        android:src="@drawable/name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lang_rus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:text="rus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lang_eng"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/selector_lang"
+        style="@style/Language_choice"/>
+
+    <TextView
+        android:id="@+id/lang_eng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="eng"
+        app:layout_constraintEnd_toStartOf="@+id/lang_nor"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lang_rus"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lang_rus"
+        style="@style/Language_choice"/>
+
+    <TextView
+        android:id="@+id/lang_nor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nor"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lang_rus"
+        app:layout_constraintEnd_toStartOf="@+id/lang_chi"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lang_eng"
+        style="@style/Language_choice"/>
+
+    <TextView
+        android:id="@+id/lang_chi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="chi"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lang_rus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lang_nor"
+        style="@style/Language_choice"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
