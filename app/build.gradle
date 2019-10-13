@@ -46,7 +46,7 @@ dependencies {
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.karumi:dexter:5.0.0'
-    implementation 'com.michaelgarnerdev.materialsearchview:materialsearchview:0.1.0@aar'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     testImplementation 'junit:junit:4.12'
