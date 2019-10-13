@@ -7,8 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.renewal_studio.pechengator.R;
+import com.renewal_studio.pechengator.contract.LocationContract;
 
-public class LocationFragment extends Fragment {
+public class LocationFragment extends Fragment implements LocationContract.View{
+
+    private static final String TAG = "LocationFragment";
+
     public LocationFragment() {
 
     }

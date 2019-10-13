@@ -13,9 +13,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.renewal_studio.pechengator.R;
+import com.renewal_studio.pechengator.contract.RouteContract;
 
 public class RouteFragment extends Fragment implements GoogleMap.OnMyLocationButtonClickListener,
-        GoogleMap.OnMyLocationClickListener,  OnMapReadyCallback {
+        GoogleMap.OnMyLocationClickListener,  OnMapReadyCallback , RouteContract.View {
+
+    private static final String TAG = "RouteFragment";
 
     View root;
     private GoogleMap mMap;

@@ -17,15 +17,17 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.renewal_studio.pechengator.R;
+import com.renewal_studio.pechengator.contract.LanguageChoiseContract;
 
 import java.util.List;
 
-public class LanguageChoiseFragment extends Fragment {
+public class LanguageChoiseFragment extends Fragment implements LanguageChoiseContract.View  {
+
+    private static final String TAG = "LanguageChoiseFragment";
 
     private View root;
 
-    public LanguageChoiseFragment() {
-
+    public void LanguageChoiseFragment() {
     }
 
     @Override
@@ -51,4 +53,5 @@ public class LanguageChoiseFragment extends Fragment {
         });
         return root;
     }
+
 }

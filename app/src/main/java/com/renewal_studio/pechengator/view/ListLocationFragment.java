@@ -10,10 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.renewal_studio.pechengator.R;
+import com.renewal_studio.pechengator.contract.ListLocationContract;
 
-public class ListLocationFragment extends Fragment {
+public class ListLocationFragment extends Fragment implements ListLocationContract.View {
 
-    public ListLocationFragment() {
+    private static final String TAG = "ListLocationFragment";
+
+    public void ListLocationFragment() {
     }
 
     @Override

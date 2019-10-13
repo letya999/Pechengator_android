@@ -12,8 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.renewal_studio.pechengator.R;
+import com.renewal_studio.pechengator.contract.StartContract;
 
-public class StartFragment extends Fragment {
+public class StartFragment extends Fragment implements StartContract.View {
+
+    private static final String TAG = "StartFragment";
 
     private View root;
 
