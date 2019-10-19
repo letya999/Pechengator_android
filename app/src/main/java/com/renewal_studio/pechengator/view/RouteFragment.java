@@ -1,6 +1,5 @@
 package com.renewal_studio.pechengator.view;
 
-
 import android.location.Location;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -14,13 +13,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.renewal_studio.pechengator.R;
 import com.renewal_studio.pechengator.contract.RouteContract;
+import butterknife.ButterKnife;
 
 public class RouteFragment extends Fragment implements GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener,  OnMapReadyCallback , RouteContract.View {
 
-    private static final String TAG = "RouteFragment";
-
-    View root;
     private GoogleMap mMap;
     SupportMapFragment mapFragment;
 
@@ -30,9 +27,11 @@ public class RouteFragment extends Fragment implements GoogleMap.OnMyLocationBut
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.fragment_route, container, false);
+        View root = inflater.inflate(R.layout.fragment_route, container, false);
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        ((MainActivity)getActivity()).setName(getString(R.string.show_route));
+        ButterKnife.bind(this, root);
         return root;
     }
 

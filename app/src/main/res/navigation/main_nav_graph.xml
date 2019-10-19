@@ -4,20 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@id/listLocationFragment">
 
-    <fragment
-        android:id="@+id/startFragment"
-        android:name="com.renewal_studio.pechengator.view.StartFragment"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
-        <action
-            android:id="@+id/action_startFragment_to_listLocationFragment"
-            app:destination="@id/listLocationFragment" />
-        <action
-            android:id="@+id/action_startFragment_to_languageChoiseFragment"
-            app:destination="@id/languageChoiseFragment" />
-    </fragment>
     <fragment
         android:id="@+id/listLocationFragment"
         android:name="com.renewal_studio.pechengator.view.ListLocationFragment"
@@ -27,6 +15,7 @@
             android:id="@+id/action_listLocationFragment_to_locationFragment"
             app:destination="@id/locationFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/locationFragment"
         android:name="com.renewal_studio.pechengator.view.LocationFragment"
@@ -36,19 +25,11 @@
             android:id="@+id/action_locationFragment_to_routeFragment"
             app:destination="@id/routeFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/languageChoiseFragment"
-        android:name="com.renewal_studio.pechengator.view.LanguageChoiseFragment"
-        android:label="fragment_language_choise"
-        tools:layout="@layout/fragment_language_choise" >
-        <action
-            android:id="@+id/action_languageChoiseFragment_to_startFragment"
-            app:destination="@id/startFragment"
-            app:launchSingleTop="true" />
-    </fragment>
+
     <fragment
         android:id="@+id/routeFragment"
         android:name="com.renewal_studio.pechengator.view.RouteFragment"
         android:label="fragment_route"
         tools:layout="@layout/fragment_route" />
+
 </navigation>

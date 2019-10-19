@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Pechengator</string>
     <string name="hint"> найти локацию по названию </string>
-    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyAaKiSQCRzIJMG8XpCz_vO_T_bTEkXUhQE
     </string>
+    <string name="list_locations">Список локаций</string>
+    <string name="location">Локация</string>
+    <string name="show_route">Построить маршрут</string>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/languageChoiseFragment">
+
+    <fragment
+        android:id="@+id/languageChoiseFragment"
+        android:name="com.renewal_studio.pechengator.view.LanguageChoiseFragment"
+        android:label="fragment_language_choise"
+        tools:layout="@layout/fragment_language_choise">
+
+        <action
+            android:id="@+id/action_languageChoiseFragment2_to_startFragment3"
+            app:destination="@id/startFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.renewal_studio.pechengator.view.StartFragment"
+        android:label="StartFragment"/>
+</navigation>

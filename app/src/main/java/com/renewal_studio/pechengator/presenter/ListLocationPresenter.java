@@ -2,6 +2,7 @@ package com.renewal_studio.pechengator.presenter;
 
 import com.renewal_studio.pechengator.contract.ListLocationContract;
 import com.renewal_studio.pechengator.repository.ListLocationRepository;
+import com.renewal_studio.pechengator.view.ListLocationFragment;
 
 public class ListLocationPresenter implements ListLocationContract.Presenter {
 
