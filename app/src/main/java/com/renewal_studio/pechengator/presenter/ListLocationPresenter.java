@@ -7,10 +7,10 @@ public class ListLocationPresenter implements ListLocationContract.Presenter {
 
     private static final String TAG = "ListLocationPresenter";
 
-    private ListLocationContract.View llView;
-    private ListLocationContract.Repository llRepository;
+    private ListLocationFragment llView;
+    private ListLocationRepository llRepository;
 
-    public ListLocationPresenter(ListLocationContract.View llView){
+    public ListLocationPresenter(ListLocationFragment llView){
         this.llView = llView;
         this.llRepository = new ListLocationRepository();
     }

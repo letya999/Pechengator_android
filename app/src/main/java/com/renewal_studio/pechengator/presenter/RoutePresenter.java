@@ -7,10 +7,10 @@ public class RoutePresenter implements RouteContract.Presenter {
 
     private static final String TAG = "RoutePresenter";
 
-    private RouteContract.View rView;
-    private RouteContract.Repository rRepository;
+    private RouteFragment  rView;
+    private RouteRepository rRepository;
 
-    public RoutePresenter(RouteContract.View llView){
+    public RoutePresenter(RouteFragment llView){
         this.rView = llView;
         this.rRepository = new RouteRepository();
     }

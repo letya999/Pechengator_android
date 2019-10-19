@@ -7,10 +7,10 @@ public class LanguageChoisePresenter implements LanguageChoiseContract.Presenter
 
     private static final String TAG = "LanguageChoisePresenter";
 
-    private LanguageChoiseContract.View lcView;
-    private LanguageChoiseContract.Repository lcRepository;
+    private LanguageChoiseFragment lcView;
+    private LanguageChoiseRepository lcRepository;
 
-    public LanguageChoisePresenter(LanguageChoiseContract.View lcView){
+    public LanguageChoisePresenter(LanguageChoiseFragment lcView){
         this.lcView = lcView;
         this.lcRepository = new LanguageChoiseRepository();
     }
