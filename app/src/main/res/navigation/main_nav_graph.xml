@@ -11,9 +11,15 @@
         android:name="com.renewal_studio.pechengator.view.ListLocationFragment"
         android:label="fragment_list_location"
         tools:layout="@layout/fragment_list_location" >
+
         <action
             android:id="@+id/action_listLocationFragment_to_locationFragment"
             app:destination="@id/locationFragment" />
+
+        <argument
+            android:name="location"
+            app:argType="com.renewal_studio.pechengator.support.DocumentQuote" />
+
     </fragment>
 
     <fragment
@@ -21,9 +27,11 @@
         android:name="com.renewal_studio.pechengator.view.LocationFragment"
         android:label="fragment_location"
         tools:layout="@layout/fragment_location">
+
         <action
             android:id="@+id/action_locationFragment_to_routeFragment"
             app:destination="@id/routeFragment" />
+
     </fragment>
 
     <fragment

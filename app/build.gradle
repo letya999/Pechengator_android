@@ -13,6 +13,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
 
     compileOptions {
@@ -49,6 +50,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.asksira.android:loopingviewpager:1.1.4'
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.google.firebase:firebase-firestore:21.2.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
 
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     testImplementation 'junit:junit:4.12'
