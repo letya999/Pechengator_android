@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    //решил сделать вот так в лоб, без event bus, чтобы не нагружать приложение
     @OnClick(R.id.btn_back)
     public void back(View view) {
         setVisibilityBack(View.INVISIBLE);
