@@ -1,19 +1,54 @@
 package com.renewal_studio.pechengator.presenter;
 
+import com.renewal_studio.pechengator.contract.ListLocationContract;
 import com.renewal_studio.pechengator.contract.LocationContract;
+import com.renewal_studio.pechengator.repository.ListLocationRepository;
 import com.renewal_studio.pechengator.repository.LocationRepository;
-import com.renewal_studio.pechengator.view.LocationFragment;
+import com.renewal_studio.pechengator.support.DocumentQuote;
+
+import java.util.ArrayList;
 
 public class LocationPresenter implements LocationContract.Presenter {
 
     private static final String TAG = "LocationPresenter";
 
-    private LocationFragment lView;
-    private LocationRepository lRepository;
+    private String language;
+    private String documentName;
+    private DocumentQuote documentQuote = new DocumentQuote();
 
-    public LocationPresenter(LocationFragment llView){
+    private LocationContract.View lView;
+    private ListLocationContract.Repository lRepository;
+
+    public LocationPresenter(LocationContract.View llView){
         this.lView = llView;
-        this.lRepository = new LocationRepository();
+        this.lRepository = new ListLocationRepository();
+    }
+
+    public void OnCreate(String language, String documentName){
+        this.language = language;
+        this.documentName = documentName;
+        documentQuote = lRepository.LoadDocumentData(language , documentName);
+        /*
+        Set it on View
+         */
+    }
+
+    public void OnMoreInformationClicked(){
+        /*
+        View update
+         */
+    }
+
+    public void OnBackButtonClicked(){
+        /*
+        View update
+         */
+    }
+
+    public void OnMapFinderClicked(){
+        /*
+        load Location layout
+         */
     }
 
 }
