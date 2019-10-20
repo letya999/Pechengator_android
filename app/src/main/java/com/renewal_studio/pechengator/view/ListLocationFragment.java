@@ -9,6 +9,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.renewal_studio.pechengator.R;
 import com.renewal_studio.pechengator.contract.ListLocationContract;
@@ -19,6 +20,14 @@ import butterknife.OnClick;
 public class ListLocationFragment extends Fragment implements ListLocationContract.View {
 
     public void ListLocationFragment() {}
+
+
+    @OnClick(R.id.searchTextView)
+    public void click(View view) {
+        NavController navController = Navigation.
+                findNavController(getActivity(), R.id.nav_host_fragment);
+        navController.navigate(R.id.locationFragment);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

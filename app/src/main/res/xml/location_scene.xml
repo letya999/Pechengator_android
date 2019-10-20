@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/my_transition"
+        app:constraintSetStart="@layout/fragment_location"
+        app:constraintSetEnd="@layout/fragment_location_end"
+        app:duration="1000">
+
+        <OnClick
+            app:targetId="@+id/btn_history"
+            app:clickAction="transitionToEnd"></OnClick>
+    </Transition>
+
+</MotionScene>
