@@ -52,8 +52,7 @@ dependencies {
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
     implementation 'com.google.firebase:firebase-firestore:21.2.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-
-
+    implementation 'eu.inloop:localmessagemanager:0.1.7'
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

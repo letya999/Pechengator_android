@@ -7,25 +7,20 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.renewal_studio.pechengator.R;
 import com.renewal_studio.pechengator.contract.ListLocationContract;
-import com.renewal_studio.pechengator.data.Location;
-import com.renewal_studio.pechengator.presenter.ListLocationPresenter;
-
+import com.renewal_studio.pechengator.support.DocumentQuote;
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import eu.inloop.localmessagemanager.LocalMessageManager;
 
 public class ListLocationFragment extends Fragment implements ListLocationContract.View {
 
@@ -50,16 +45,16 @@ public class ListLocationFragment extends Fragment implements ListLocationContra
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_list_location, container, false);
         ButterKnife.bind(this, root);
-        list_locations.setAdapter(new ListLocationAdapter(getContext(), new ArrayList<Location>()));
+        list_locations.setAdapter(new ListLocationAdapter(getContext(), new ArrayList<DocumentQuote>()));
         list_locations.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         return root;
     }
 
     public class ListLocationAdapter extends RecyclerView.Adapter<ListLocationAdapter.ItemViewHolder> {
-        private List<Location> locations;
+        private List<DocumentQuote> locations;
         private Context context;
 
-        public ListLocationAdapter(Context context, List<Location> locations){
+        public ListLocationAdapter(Context context, List<DocumentQuote> locations){
             this.context = context;
             this.locations = locations;
         }
@@ -67,20 +62,14 @@ public class ListLocationFragment extends Fragment implements ListLocationContra
         @Override
         public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_location, parent, false);
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
             ItemViewHolder holder = new ItemViewHolder(view);
             return holder;
         }
 
         @Override
         public void onBindViewHolder(ItemViewHolder holder, int position) {
-            holder.name.setText(locations.get(position).getLocationName());
-            holder.desc.setText(locations.get(position).getLocationDiscription());
+            holder.name.setText(locations.get(position).getName());
+            holder.desc.setText(locations.get(position).getVisualDiscription());
         }
 
         @Override
@@ -101,6 +90,12 @@ public class ListLocationFragment extends Fragment implements ListLocationContra
             public ItemViewHolder(View view) {
                 super(view);
                 ButterKnife.bind(this, view);
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        LocalMessageManager.getInstance().send(R.id.msg_event, locations.get(getAdapterPosition()));
+                    }
+                });
             }
         }
     }

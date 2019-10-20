@@ -2,27 +2,25 @@ package com.renewal_studio.pechengator.view;
 
 import android.content.Context;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.asksira.loopingviewpager.LoopingPagerAdapter;
 import com.asksira.loopingviewpager.LoopingViewPager;
 import com.rd.PageIndicatorView;
 import com.renewal_studio.pechengator.R;
 import com.renewal_studio.pechengator.contract.LocationContract;
-
+import com.renewal_studio.pechengator.support.DocumentQuote;
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import eu.inloop.localmessagemanager.LocalMessage;
+import eu.inloop.localmessagemanager.LocalMessageCallback;
 
-public class LocationFragment extends Fragment implements LocationContract.View{
+public class LocationFragment extends Fragment implements LocationContract.View, LocalMessageCallback {
 
     public LocationFragment() {}
 
@@ -30,6 +28,7 @@ public class LocationFragment extends Fragment implements LocationContract.View{
     LoopingViewPager viewPager;
     @BindView(R.id.indicator)
     PageIndicatorView indicatorView;
+    DocumentQuote location;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,6 +66,15 @@ public class LocationFragment extends Fragment implements LocationContract.View{
     public void onPause() {
         viewPager.pauseAutoScroll();
         super.onPause();
+    }
+
+    @Override
+    public void handleMessage(@NonNull LocalMessage msg) {
+        switch (msg.getId()) {
+            case R.id.msg_event : {
+                location = ((DocumentQuote)msg.getObject());
+            }
+        }
     }
 
     public class PhotoAdapter extends LoopingPagerAdapter<Integer> {

@@ -13,12 +13,8 @@
         tools:layout="@layout/fragment_list_location" >
 
         <action
-            android:id="@+id/action_listLocationFragment_to_locationFragment"
+            android:id="@+id/action_listLocationFragment_to_locationFragment2"
             app:destination="@id/locationFragment" />
-
-        <argument
-            android:name="location"
-            app:argType="com.renewal_studio.pechengator.support.DocumentQuote" />
 
     </fragment>
 
