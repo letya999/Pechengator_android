@@ -2,6 +2,9 @@ package com.renewal_studio.pechengator.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -24,6 +27,29 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.menu_tab)
     public void openSideMenu(View view) {
         side_menu.openDrawer(Gravity.RIGHT);
+    }
+
+    @OnClick({R.id.route, R.id.list_loc, R.id.add_loc, R.id.choise_lang, R.id.feedback, R.id.exit})
+    public void clickMenuItem(View view) {
+        switch (view.getId()) {
+            case R.id.route: {
+                NavController navController = Navigation.
+                        findNavController(this, R.id.nav_host_fragment);
+                navController.navigate(R.id.routeFragment);
+                break;
+            }
+            case R.id.list_loc: {
+                NavController navController = Navigation.
+                        findNavController(this, R.id.nav_host_fragment);
+                navController.navigate(R.id.listLocationFragment);
+                break;
+            }
+            case R.id.choise_lang: {
+                startActivity(new Intent(this, SplashActivity.class));
+                break;
+            }
+        }
+        side_menu.closeDrawers();
     }
 
     @Override

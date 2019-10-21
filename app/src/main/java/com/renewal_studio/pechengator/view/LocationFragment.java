@@ -7,11 +7,10 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.constraintlayout.motion.widget.MotionScene;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
-import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +37,15 @@ public class LocationFragment extends Fragment implements LocationContract.View,
     @BindView(R.id.scroll_text)
     NestedScrollView scrollView;
     DocumentQuote location;
-    private boolean click = false;
     @BindView(R.id.scroll_content)
     MotionLayout scroll_content;
+
+    @OnClick(R.id.show_map)
+    public void showMap(View view) {
+        NavController navController = Navigation.
+                findNavController(getActivity(), R.id.nav_host_fragment);
+        navController.navigate(R.id.routeFragment);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -76,7 +81,6 @@ public class LocationFragment extends Fragment implements LocationContract.View,
 
             @Override
             public void onTransitionChange(MotionLayout motionLayout, int i, int i1, float v) {
-
 
             }
 

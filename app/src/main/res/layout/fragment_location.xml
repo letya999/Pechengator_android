@@ -42,7 +42,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:clickable="true">
 
             <ImageButton
                 android:id="@+id/btn_show_map"
@@ -61,7 +62,7 @@
                 android:id="@+id/text_btn_show_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_gravity="top"
                 android:layout_marginStart="4dp"
                 android:text="Показать на карте" />
 

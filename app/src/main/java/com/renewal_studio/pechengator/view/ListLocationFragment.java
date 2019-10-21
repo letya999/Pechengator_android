@@ -49,6 +49,7 @@ public class ListLocationFragment extends Fragment implements ListLocationContra
         View root = inflater.inflate(R.layout.fragment_list_location, container, false);
         ButterKnife.bind(this, root);
         ((MainActivity)getActivity()).setName(getString(R.string.list_locations));
+        ((MainActivity)getActivity()).setVisibilityBack(View.INVISIBLE);
         list_locations.setAdapter(new ListLocationAdapter(getContext(), createList()));
         list_locations.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         return root;

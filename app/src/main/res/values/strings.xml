@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Pechengator</string>
     <string name="hint"> найти локацию по названию </string>
+    <string name="hint_from"> Откуда.. </string>
+    <string name="hint_to"> Куда... </string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyAaKiSQCRzIJMG8XpCz_vO_T_bTEkXUhQE
     </string>

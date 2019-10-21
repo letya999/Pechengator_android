@@ -18,7 +18,7 @@
     <include
         android:id="@+id/side_menu"
         layout="@layout/content_side_menu"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         tools:showIn="@layout/content_side_menu"
         android:layout_gravity="end"/>
