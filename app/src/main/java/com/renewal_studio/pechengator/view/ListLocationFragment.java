@@ -12,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.maps.model.LatLng;
 import com.renewal_studio.pechengator.R;
 import com.renewal_studio.pechengator.contract.ListLocationContract;
 import com.renewal_studio.pechengator.support.DocumentQuote;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,9 +48,21 @@ public class ListLocationFragment extends Fragment implements ListLocationContra
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_list_location, container, false);
         ButterKnife.bind(this, root);
-        list_locations.setAdapter(new ListLocationAdapter(getContext(), new ArrayList<DocumentQuote>()));
+        ((MainActivity)getActivity()).setName(getString(R.string.list_locations));
+        list_locations.setAdapter(new ListLocationAdapter(getContext(), createList()));
         list_locations.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         return root;
+    }
+
+    public List<DocumentQuote> createList() {
+        List<DocumentQuote> list = new ArrayList<DocumentQuote>();
+        list.add(new DocumentQuote("car1", "", "car is object",
+                "blue car", new ArrayList<String>(Arrays.asList("1","2")), new LatLng(21.2, 2)));
+        list.add(new DocumentQuote("car2", "", "car is object",
+                "red car", new ArrayList<String>(Arrays.asList("1","2")), new LatLng(21.2, 2)));
+        list.add(new DocumentQuote("car3", "", "car is object",
+                "green car", new ArrayList<String>(Arrays.asList("1","2")), new LatLng(21.2, 2)));
+        return list;
     }
 
     public class ListLocationAdapter extends RecyclerView.Adapter<ListLocationAdapter.ItemViewHolder> {
@@ -94,6 +109,9 @@ public class ListLocationFragment extends Fragment implements ListLocationContra
                     @Override
                     public void onClick(View v) {
                         LocalMessageManager.getInstance().send(R.id.msg_event, locations.get(getAdapterPosition()));
+                        NavController navController = Navigation.
+                                findNavController(getActivity(), R.id.nav_host_fragment);
+                        navController.navigate(R.id.locationFragment);
                     }
                 });
             }
