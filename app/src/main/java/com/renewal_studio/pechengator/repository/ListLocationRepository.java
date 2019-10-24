@@ -1,9 +1,7 @@
 package com.renewal_studio.pechengator.repository;
 
 import android.util.Log;
-
 import androidx.annotation.NonNull;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -11,7 +9,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.renewal_studio.pechengator.contract.ListLocationContract;
 import com.renewal_studio.pechengator.support.DocumentQuote;
-
 import java.util.ArrayList;
 
 public class ListLocationRepository implements ListLocationContract.Repository {

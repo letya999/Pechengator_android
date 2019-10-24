@@ -6,4 +6,5 @@
     <color name="text_white_color">#FEFEFE</color>
     <color name="color_place_up">#F8F8F8</color>
     <color name="light_gray">#FDFDFD</color>
+    <color name="transparent">#65696969</color>
 </resources>

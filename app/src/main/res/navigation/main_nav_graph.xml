@@ -28,6 +28,10 @@
             android:id="@+id/action_locationFragment_to_routeFragment"
             app:destination="@id/routeFragment" />
 
+        <argument
+            android:name="location"
+            app:argType="com.renewal_studio.pechengator.support.DocumentQuote" />
+
     </fragment>
 
     <fragment

@@ -10,6 +10,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.google.firebase.FirebaseApp;
 import com.renewal_studio.pechengator.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;

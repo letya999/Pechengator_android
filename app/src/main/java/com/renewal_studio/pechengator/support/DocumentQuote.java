@@ -2,18 +2,28 @@ package com.renewal_studio.pechengator.support;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.firestore.GeoPoint;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.Nullable;
 
 public class DocumentQuote implements Parcelable {
-
+    @Nullable
     private String name;
+    @Nullable
     private String note;
+    @Nullable
     private String devoted;
-    private String visualDiscription;
-    private List<String> photos = new ArrayList<String>();
-    private LatLng geopoint;
+    @Nullable
+    private String visual_description;
+    @Nullable
+    private List<String> photo = new ArrayList<String>();
+    @Nullable
+    private GeoPoint geopoint;
+    @Nullable
+    private double lat;
+    @Nullable
+    private double lng;
 
     public final static Parcelable.Creator<DocumentQuote> CREATOR = new Creator<DocumentQuote>() {
         @SuppressWarnings({
@@ -29,28 +39,50 @@ public class DocumentQuote implements Parcelable {
 
     };
 
+    public void clearPhotoList() {
+        photo.clear();
+    }
+
+    public void addPhotoUrl(String url) {
+        photo.add(url);
+    }
+
     protected DocumentQuote(Parcel in) {
         this.name = ((String) in.readValue((String.class.getClassLoader())));
         this.note = ((String) in.readValue((String.class.getClassLoader())));
         this.devoted = ((String) in.readValue((String.class.getClassLoader())));
-        this.visualDiscription = ((String) in.readValue((String.class.getClassLoader())));
-        in.readList(this.photos, (java.lang.String.class.getClassLoader()));
-        double lat = ((double) in.readValue((double.class.getClassLoader())));
-        double lng = ((double) in.readValue((double.class.getClassLoader())));
-        this.geopoint = new LatLng(lat,lng);
+        this.visual_description = ((String) in.readValue((String.class.getClassLoader())));
+        in.readList(this.photo, (java.lang.String.class.getClassLoader()));
+        lat = ((double) in.readValue((double.class.getClassLoader())));
+        lng = ((double) in.readValue((double.class.getClassLoader())));
+        this.geopoint = new GeoPoint(lat,lng);
     }
 
     public DocumentQuote() {}
 
     public DocumentQuote(String name, String note, String devoted,
-                         String visualDiscription, List<String> photos, LatLng geopoint) {
+                         String visual_description, List<String> photos, double lat, double lng) {
         super();
         this.name = name;
         this.note = note;
         this.devoted = devoted;
-        this.visualDiscription = visualDiscription;
-        this.photos = photos;
+        this.visual_description = visual_description;
+        this.photo = photos;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
+    public DocumentQuote(String name, String note, String devoted,
+                         String visualDiscription, List<String> photos, GeoPoint geopoint) {
+        super();
+        this.name = name;
+        this.note = note;
+        this.devoted = devoted;
+        this.visual_description = visualDiscription;
+        this.photo = photos;
         this.geopoint = geopoint;
+        this.lat = geopoint.getLatitude();
+        this.lng = geopoint.getLongitude();
     }
 
     public String getName() {
@@ -77,34 +109,52 @@ public class DocumentQuote implements Parcelable {
         this.devoted = devoted;
     }
 
-    public String getVisualDiscription() {
-        return visualDiscription;
+    public String getVisual_description() {
+        return visual_description;
     }
 
-    public void setVisualDiscription(String visualDiscription) {
-        this.visualDiscription = visualDiscription;
+    public void setVisual_description(String visual_description) {
+        this.visual_description = visual_description;
     }
 
-    public List<String> getPhotos() {
-        return photos;
+    public List<String> getPhoto() {
+        return photo;
     }
 
-    public void setPhotos(List<String> photos) {
-        this.photos = photos;
+    public void setPhoto(List<String> photo) {
+        this.photo = photo;
     }
 
-    public LatLng getGeopoint() {
+    public GeoPoint getGeopoint() {
         return geopoint;
     }
 
-    public void setGeopoint(LatLng geopoint) {
+    public void setGeopoint(GeoPoint geopoint) {
         this.geopoint = geopoint;
+        this.lat = geopoint.getLatitude();
+        this.lng = geopoint.getLongitude();
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public double getLng() {
+        return lng;
     }
 
     @Override
     public String toString() {
         return new StringBuilder().append(name).append(" "+note).append(" "+devoted).
-                append(" "+visualDiscription).append(" "+photos).append(" "+geopoint.toString()).toString();
+                append(" "+visual_description).append(" "+photo.toString()).toString();
     }
 
     @Override
@@ -126,10 +176,10 @@ public class DocumentQuote implements Parcelable {
         dest.writeValue(name);
         dest.writeValue(note);
         dest.writeValue(devoted);
-        dest.writeValue(visualDiscription);
-        dest.writeList(photos);
-        dest.writeValue(geopoint.latitude);
-        dest.writeValue(geopoint.longitude);
+        dest.writeValue(visual_description);
+        dest.writeList(photo);
+        dest.writeValue(geopoint.getLatitude());
+        dest.writeValue(geopoint.getLongitude());
     }
 
     public int describeContents() {

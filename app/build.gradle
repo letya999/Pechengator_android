@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: "androidx.navigation.safeargs"
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.ext.sdkVersion
@@ -48,10 +49,13 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.karumi:dexter:5.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation "com.google.android.gms:play-services-location:17.0.0"
     implementation 'com.romandanylyk:pageindicatorview:1.0.3'
     implementation 'com.google.firebase:firebase-firestore:21.2.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'eu.inloop:localmessagemanager:0.1.7'
+    implementation 'com.google.firebase:firebase-storage:19.1.0'
+    implementation 'com.firebaseui:firebase-ui-storage:4.3.1'
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
