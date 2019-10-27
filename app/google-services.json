@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1099241996691-vmooupnrk6f4a1jfme2nfdo3gbj7225v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.renewal_studio.pechengator",
+            "certificate_hash": "c57197a63c40ef3ffdd3111d3d8a9ef9f2ceb0d5"
+          }
+        },
+        {
           "client_id": "1099241996691-m4cep6qbato7pv4qd2fj7sqbiqn3argb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -38,6 +46,13 @@
             {
               "client_id": "1099241996691-bag7ndntc0lhvqe70059ke2f4ft929si.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1099241996691-7muaksmjr0hrthj01qho5vuehafl3p2e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Renewal-Studio.Pechengator-iOS"
+              }
             }
           ]
         }

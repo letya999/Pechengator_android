@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Pechengator</string>
+    <string name="hint"> Finn sted etter navn </string>
+    <string name="hint_from"> Fra hvor ... </string>
+    <string name="hint_to"> Hvor ... </string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDLQdKlSs5yf0r6xrmSJkFi34crm2ihN20
+    </string>
+    <string name="list_locations">Liste over lokasjoner</string>
+    <string name="location">Plassering</string>
+    <string name="show_route">Bygg rute</string>
+    <string name="visual_desc">Monumentet er en steinstein som er omtrent 2,5 meter høy, montert på en steinpestestall. På forsiden, i midten - en femspiss stjerne. Litt lavere er en plate med inskripsjonen: "De ble revet av metall, og eksplosjonene kvalt dem og kunne ikke redde sykehuset. Her fullførte heltene militærstien, hold soldatene, kjære land ...". På platene rundt stelen står navnene til 236 personer som døde av sår på et mobilt feltsykehus.</string>
+    <string name="devoted">Dette minneskiltet viser listen over de som døde av sår i et mobilt feltsykehus nr. 96, 14 fra hæren fra Karelian Front.
+I krigsårene var sykehuset ikke langt fra å passere hovedveier, fordi det var behov for å ta alvorlig sårede soldater bak. Da krigen tok slutt begynte byggingen av nye veier. Og de gamle forble forlatt. Det var behov for å flytte kirkegårder til nye veier. Men det var veldig vanskelig å gjøre. Derfor ble bare navn og lister overført, og likene ble liggende i bakken.</string>
+    <string name="history">Historien til monumentet:</string>
+    <string name="history_monument">Monumenthistorie</string>
+    <string name="current_location">Nåværende beliggenhet</string>
+    <string name="menu">Meny</string>
+    <string name="build_route">Bygg rute</string>
+    <string name="add_location">Legg til beliggenhet</string>
+    <string name="choise_lang">Velg språk</string>
+    <string name="feedback">Tilbakemeldinger</string>
+    <string name="show_in_map">Vis på kart</string>
+    <string name="build">Konstruere</string>
+    <string name="start">Kom i gang</string>
+    <string name="guide">DIN REISeguide</string>
+    <string name="sightseeing"> PÅ SIGHTSEEING \ nPECCHENG DISTRIKT \ n MURMAN-REGION </string>
+    <string name="distance">avstand</string>
+    <string name="install_play_services">Installer google play-tjenester for å bruke dette programmet</string>
+    <string name="photo">Bilde</string>
+    <string name="km">км</string>
+    <string name="m">м</string>
+</resources>

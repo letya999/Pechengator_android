@@ -1,10 +1,15 @@
-package com.renewal_studio.pechengator.support;
+package com.renewal_studio.pechengator.common;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import com.google.firebase.firestore.GeoPoint;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.annotation.Nullable;
 
 public class DocumentQuote implements Parcelable {
@@ -19,10 +24,8 @@ public class DocumentQuote implements Parcelable {
     @Nullable
     private List<String> photo = new ArrayList<String>();
     @Nullable
-    private GeoPoint geopoint;
-    @Nullable
+    private GeoPoint geopoint = null;
     private double lat;
-    @Nullable
     private double lng;
 
     public final static Parcelable.Creator<DocumentQuote> CREATOR = new Creator<DocumentQuote>() {
@@ -152,6 +155,7 @@ public class DocumentQuote implements Parcelable {
     }
 
     @Override
+    @NonNull
     public String toString() {
         return new StringBuilder().append(name).append(" "+note).append(" "+devoted).
                 append(" "+visual_description).append(" "+photo.toString()).toString();
@@ -178,8 +182,13 @@ public class DocumentQuote implements Parcelable {
         dest.writeValue(devoted);
         dest.writeValue(visual_description);
         dest.writeList(photo);
-        dest.writeValue(geopoint.getLatitude());
-        dest.writeValue(geopoint.getLongitude());
+        if (geopoint != null) {
+            dest.writeValue(geopoint.getLatitude());
+            dest.writeValue(geopoint.getLongitude());
+        } else {
+            dest.writeValue(0);
+            dest.writeValue(0);
+        }
     }
 
     public int describeContents() {

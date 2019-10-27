@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/text_white_color"
     tools:context=".view.LanguageChoiseFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="96dp"
-            android:text="rus"
+            android:text="Rus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/lang_eng"
             app:layout_constraintHorizontal_bias="0.5"
@@ -63,18 +64,20 @@
             android:id="@+id/lang_eng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="eng"
+            android:background="@drawable/selector_lang"
             app:layout_constraintEnd_toStartOf="@+id/lang_nor"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/lang_rus"
             app:layout_constraintBaseline_toBaselineOf="@+id/lang_rus"
+            android:text="Eng"
             style="@style/Language_choice"/>
 
         <TextView
             android:id="@+id/lang_nor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="nor"
+            android:background="@drawable/selector_lang"
+            android:text="Nor"
             app:layout_constraintBaseline_toBaselineOf="@+id/lang_rus"
             app:layout_constraintEnd_toStartOf="@+id/lang_chi"
             app:layout_constraintHorizontal_bias="0.5"
@@ -85,7 +88,8 @@
             android:id="@+id/lang_chi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="chi"
+            android:background="@drawable/selector_lang"
+            android:text="Chi"
             app:layout_constraintBaseline_toBaselineOf="@+id/lang_rus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

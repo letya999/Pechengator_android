@@ -40,7 +40,7 @@
             android:elevation="12dp"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="Начать"
+            android:text="@string/start"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/text_white_color" />
 
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text=" ВАШ ПУТЕВОДИТЕЛЬ "
+        android:text="@string/guide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
@@ -80,7 +80,7 @@
         android:layout_marginBottom="16dp"
         android:maxLines="3"
         android:minLines="3"
-        android:text=" ПО ДОСТОПРИМЕЧАТЕЛЬНОСТЯМ \nПЕЧЕНГСКОГО РАЙОНА \n МУРМАНСКОЙ ОБЛАСТИ"
+        android:text="@string/sightseeing"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/content"
         app:layout_constraintEnd_toEndOf="parent"

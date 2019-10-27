@@ -1,18 +1,23 @@
 package com.renewal_studio.pechengator.view;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
-import com.google.firebase.FirebaseApp;
 import com.renewal_studio.pechengator.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
         side_menu.openDrawer(Gravity.RIGHT);
     }
 
-    @OnClick({R.id.route, R.id.list_loc, R.id.add_loc, R.id.choise_lang, R.id.feedback, R.id.exit})
+    @OnClick({R.id.route, R.id.list_loc, R.id.add_loc, R.id.choise_lang, R.id.feedback})
     public void clickMenuItem(View view) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         switch (view.getId()) {
             case R.id.route: {
                 NavController navController = Navigation.
@@ -48,6 +55,24 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.choise_lang: {
                 startActivity(new Intent(this, SplashActivity.class));
+                break;
+            }
+            case R.id.add_loc: {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:notdevelop@gmail.com"));
+                try {
+                    startActivity(emailIntent);
+                } catch (ActivityNotFoundException e) {
+                }
+                break;
+            }
+            case R.id.feedback: {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:notdevelop@gmail.com"));
+                try {
+                    startActivity(emailIntent);
+                } catch (ActivityNotFoundException e) {
+                }
                 break;
             }
         }

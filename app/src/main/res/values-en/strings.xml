@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Pechengator</string>
+    <string name="hint"> Find location by name </string>
+    <string name="hint_from"> From where ... </string>
+    <string name="hint_to"> Where to... </string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDLQdKlSs5yf0r6xrmSJkFi34crm2ihN20
+    </string>
+    <string name="list_locations">List of locations</string>
+    <string name="location">Location</string>
+    <string name="show_route">Build route</string>
+    <string name="visual_desc">The monument is a stone stele about 2.5 meters high, mounted on a stone pedestal. On the front side, in the middle - a five-pointed star. A little lower is a plate with the inscription: "They were torn by metal, and the explosions strangled them and could not save the hospital. Here the heroes completed the military path, keep the soldiers, dear land ...". On the plates around the stele are the names of 236 people who died from wounds in a mobile field hospital.</string>
+    <string name="devoted">This memorial sign depicts the list of those who died from wounds in a mobile field hospital No. 96, 14 of the army of the Karelian Front.
+During the war years, the hospital was not far from passing front roads, because there was a need to take seriously wounded soldiers to the rear. When the war ended, construction of new roads began. And the old ones remained abandoned. There was a need to move cemeteries to new roads. But it was very difficult to do. Therefore, only names and lists were transferred, and the bodies remained in the ground.</string>
+    <string name="history">History of the monument:</string>
+    <string name="history_monument">Monument History</string>
+    <string name="current_location">Current location</string>
+    <string name="menu">Menu</string>
+    <string name="build_route">Build route</string>
+    <string name="add_location">Add location</string>
+    <string name="choise_lang">Choose languages</string>
+    <string name="feedback">Feedback</string>
+    <string name="show_in_map">To show on the map</string>
+    <string name="build">Build</string>
+    <string name="start">To begin</string>
+    <string name="guide"> YOUR TRAVEL GUIDE </string>
+    <string name="sightseeing"> ON SIGHTSEEING \ nPECCHENG DISTRICT \ n MURMAN REGION </string>
+    <string name="distance">distance</string>
+    <string name="install_play_services">Please Install google play services to use this application</string>
+    <string name="photo">Photo</string>
+    <string name="km">км</string>
+    <string name="m">м</string>
+</resources>

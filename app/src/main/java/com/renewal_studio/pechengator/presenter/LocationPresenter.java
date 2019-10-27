@@ -1,12 +1,9 @@
 package com.renewal_studio.pechengator.presenter;
 
+import com.renewal_studio.pechengator.common.DocumentQuote;
 import com.renewal_studio.pechengator.contract.ListLocationContract;
 import com.renewal_studio.pechengator.contract.LocationContract;
 import com.renewal_studio.pechengator.repository.ListLocationRepository;
-import com.renewal_studio.pechengator.repository.LocationRepository;
-import com.renewal_studio.pechengator.support.DocumentQuote;
-
-import java.util.ArrayList;
 
 public class LocationPresenter implements LocationContract.Presenter {
 

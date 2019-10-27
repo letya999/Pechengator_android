@@ -22,10 +22,11 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:maxLines="2"
         android:text="Название"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +36,10 @@
 
     <TextView
         android:id="@+id/desc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:maxLines="2"
         android:text="Описание"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,4 +65,5 @@
         android:text="расстояние"
         app:layout_constraintBottom_toBottomOf="@+id/marker"
         app:layout_constraintStart_toEndOf="@+id/marker" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

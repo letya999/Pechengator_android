@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@id/languageChoiseFragment">
 
     <fragment
         android:id="@+id/languageChoiseFragment"
@@ -21,5 +21,11 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.renewal_studio.pechengator.view.StartFragment"
-        android:label="StartFragment"/>
+        android:label="StartFragment">
+
+        <action
+            android:id="@+id/action_startFragment_to_languageChoiseFragment"
+            app:destination="@id/languageChoiseFragment" />
+
+    </fragment>
 </navigation>

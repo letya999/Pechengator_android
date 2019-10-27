@@ -1,12 +1,11 @@
 <resources>
     <string name="app_name">Pechengator</string>
-    <string name="hint"> найти локацию по названию </string>
+    <string name="hint"> Найти локацию по названию </string>
     <string name="hint_from"> Откуда.. </string>
     <string name="hint_to"> Куда... </string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
-        AIzaSyAaKiSQCRzIJMG8XpCz_vO_T_bTEkXUhQE
+        AIzaSyDLQdKlSs5yf0r6xrmSJkFi34crm2ihN20
     </string>
-    <string name="list_locations">Список локаций</string>
     <string name="location">Локация</string>
     <string name="show_route">Построить маршрут</string>
     <string name="visual_desc">Памятник представляет собой каменную стелу высотой примерно 2,5 метра, установленную на каменный постамент. На лицевой стороне, посередине - пятиконечная звезда. Чуть ниже - табличка с надписью: "Их рвал металл, и взрывы их душили, и не смогли спасти госпиталя. Здесь ратный путь герои завершили, храни солдат, родимая земля...". На плитах вокруг стелы - имена 236 человек, умерших от ран в передвижном полевом госпитале.</string>
@@ -14,4 +13,21 @@
 В военные годы госпиталь находился недалеко от проходивших фронтовых дорог, потому что была необходимость вывозить тяжелораненых бойцов в тыл. Когда война закончилась, началось строительство новых дорог. А старые  оставались заброшенными. Появилась необходимость переносить кладбища к новым дорогам. Но это было очень трудно сделать. Поэтому переносились только имена, списки, а тела оставались в земле.</string>
     <string name="history">История памятника:</string>
     <string name="history_monument">История памятника</string>
+    <string name="current_location">Текущее местоположение</string>
+    <string name="menu">Меню</string>
+    <string name="build_route">Построить маршрут</string>
+    <string name="list_locations">Список локаций</string>
+    <string name="add_location">Добавить локацию</string>
+    <string name="choise_lang">Выбрать язык</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="show_in_map">Показать на карте</string>
+    <string name="build">Построть</string>
+    <string name="start">Начать</string>
+    <string name="guide"> ВАШ ПУТЕВОДЕЛЬ </string>
+    <string name="sightseeing"> ПО ДОСТОПРИМЕЧАТЕЛЬНОСТЯМ \nПЕЧЕНГСКОГО РАЙОНА \n МУРМАНСКОЙ ОБЛАСТИ </string>
+    <string name="distance">расстрояние</string>
+    <string name="install_play_services">Пожалуйста, установите сервисы Google Play, чтобы использовать это приложение</string>
+    <string name="photo">Фото</string>
+    <string name="km">км</string>
+    <string name="m">м</string>
 </resources>

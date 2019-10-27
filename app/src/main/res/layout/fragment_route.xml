@@ -6,149 +6,182 @@
     android:layout_height="match_parent"
     tools:context=".view.RouteFragment">
 
-    <fragment
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </fragment>
+        android:layout_height="match_parent"
+        map:cameraTargetLat="69.147425"
+        map:cameraTargetLng="32.572638"
+        map:cameraZoom="8"
+        map:mapType="normal" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/route_scene">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/text_white_color"
-            android:elevation="4dp">
+            android:visibility="visible">
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/types_transport"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@color/text_white_color"
-                android:elevation="2dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="-2dp"
-                app:itemIconSize="36dp"
-                app:itemIconTint="@drawable/nav_item_color_state"
-                app:itemTextColor="@drawable/nav_item_color_state"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:menu="@menu/navigation" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/to"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/search_shape"
-                app:cardElevation="2dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/from"
-                app:layout_constraintVertical_bias="0.0">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/main.collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:minHeight="0dp"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/search_bar_to"
+                    android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/text_white_color"
+                    android:elevation="4dp">
 
-                    <EditText
-                        android:id="@+id/search_to"
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/types_transport"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:clickable="true"
-                        android:hint="@string/hint_to"
-                        android:imeOptions="actionSearch"
-                        android:inputType="textNoSuggestions"
-                        android:paddingLeft="12dp"
-                        android:paddingTop="12dp"
-                        android:paddingRight="24dp"
-                        android:paddingBottom="12dp"
-                        android:singleLine="true"
-                        android:textColor="#212121"
-                        android:textColorHint="#727272"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:background="@color/text_white_color"
+                        android:elevation="2dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="-2dp"
+                        app:itemIconSize="36dp"
+                        app:itemIconTint="@drawable/nav_item_color_state"
+                        app:itemTextColor="@drawable/nav_item_color_state"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/from"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/search_shape"
-                app:cardElevation="2dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/types_transport">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/search_bar_from"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/search_from"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="4dp"
-                        android:clickable="true"
-                        android:hint="@string/hint_from"
-                        android:imeOptions="actionSearch"
-                        android:inputType="textNoSuggestions"
-                        android:paddingLeft="12dp"
-                        android:paddingTop="12dp"
-                        android:paddingRight="24dp"
-                        android:paddingBottom="12dp"
-                        android:singleLine="true"
-                        android:textColor="#212121"
-                        android:textColorHint="#727272"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <ImageButton
-                        android:id="@+id/geolocation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@null"
-                        android:paddingBottom="6dp"
-                        android:stateListAnimator="@null"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/geo" />
+                        app:menu="@menu/navigation" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/to"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/search_shape"
+                        app:cardElevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/from"
+                        app:layout_constraintVertical_bias="0.0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/search_bar_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/search_to"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:clickable="true"
+                                android:hint="@string/hint_to"
+                                android:imeOptions="actionSearch"
+                                android:inputType="none"
+                                android:paddingLeft="12dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="24dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:textColor="#212121"
+                                android:textColorHint="#727272"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/from"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/search_shape"
+                        app:cardElevation="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/types_transport">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/search_bar_from"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/search_from"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:clickable="true"
+                                android:hint="@string/hint_from"
+                                android:imeOptions="actionSearch"
+                                android:inputType="none"
+                                android:paddingLeft="12dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="24dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:textColor="#212121"
+                                android:textColorHint="#727272"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/geolocation"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <ImageButton
+                                android:id="@+id/geolocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@null"
+                                android:paddingBottom="6dp"
+                                android:stateListAnimator="@null"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0"
+                                app:srcCompat="@drawable/geo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.cardview.widget.CardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ImageButton
             android:id="@+id/zoom_plus"
@@ -192,6 +225,33 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/geo" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/create_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/shape_zoom_btn"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Построить"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+        <ImageButton
+            android:id="@+id/show_route"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/shape_zoom_btn"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/route" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
 </FrameLayout>

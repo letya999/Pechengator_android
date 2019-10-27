@@ -16,6 +16,15 @@
             android:id="@+id/action_listLocationFragment_to_locationFragment2"
             app:destination="@id/locationFragment" />
 
+        <argument
+            android:name="list_click"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action
+            android:id="@+id/action_listLocationFragment_to_routeFragment"
+            app:destination="@id/routeFragment" />
+
     </fragment>
 
     <fragment
@@ -30,7 +39,10 @@
 
         <argument
             android:name="location"
-            app:argType="com.renewal_studio.pechengator.support.DocumentQuote" />
+            app:argType="com.renewal_studio.pechengator.common.DocumentQuote" />
+        <action
+            android:id="@+id/action_locationFragment_to_photoViewFragment"
+            app:destination="@id/photoViewFragment" />
 
     </fragment>
 
@@ -38,6 +50,29 @@
         android:id="@+id/routeFragment"
         android:name="com.renewal_studio.pechengator.view.RouteFragment"
         android:label="fragment_route"
-        tools:layout="@layout/fragment_route" />
+        tools:layout="@layout/fragment_route">
+
+        <action
+            android:id="@+id/action_routeFragment_to_listLocationFragment"
+            app:destination="@id/listLocationFragment" />
+
+        <argument
+            android:name="location"
+            android:defaultValue="@null"
+            app:argType="com.renewal_studio.pechengator.common.DocumentQuote"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/photoViewFragment"
+        android:name="com.renewal_studio.pechengator.view.PhotoViewFragment"
+        android:label="fragment_photo_view"
+        tools:layout="@layout/fragment_photo_view">
+        <argument
+            android:name="location"
+            android:defaultValue="@null"
+            app:argType="com.renewal_studio.pechengator.common.DocumentQuote"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

@@ -29,9 +29,11 @@
                 android:id="@+id/searchTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:background="@null"
+                android:clickable="true"
                 android:hint="@string/hint"
-                android:imeOptions="actionSearch"
+                android:imeOptions="actionDone"
                 android:inputType="textNoSuggestions"
                 android:paddingLeft="16dp"
                 android:paddingTop="10dp"
@@ -42,9 +44,10 @@
                 android:textColorHint="#727272"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/search"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:clickable="true"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <ImageButton
@@ -60,7 +63,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.904"
-                app:layout_constraintStart_toEndOf="@+id/searchTextView"
                 app:layout_constraintTop_toTopOf="@+id/searchTextView"
                 app:srcCompat="@drawable/search" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -79,6 +81,8 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         android:overScrollMode="never"
         android:scrollbars="vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:scrollbarStyle="insideInset"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

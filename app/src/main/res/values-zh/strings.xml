@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Pechengator</string>
+    <string name="hint"> 按名称查找位置 </string>
+    <string name="hint_from"> 从哪里... </string>
+    <string name="hint_to"> 哪里... </string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDLQdKlSs5yf0r6xrmSJkFi34crm2ihN20
+    </string>
+    <string name="list_locations">地点清单</string>
+    <string name="location">所在位置</string>
+    <string name="show_route">建造路线</string>
+    <string name="visual_desc">纪念碑是一块石碑，高约2.5米，安装在石头基座上。 在正面，在中间-五角星。 稍低一点的盘子上刻着铭文：“它们被金属撕裂，爆炸把他们勒死了，无法救救医院。这里的英雄们完成了军事道路，保留了士兵，亲爱的土地……”。 碑周围的盘子上有236人在流动战地医院因伤亡的名字。</string>
+    <string name="devoted">这个纪念标志描绘了在卡累利阿阵线军队第14号流动野战医院第96号死于伤亡者的名单。
+在战争年代，医院离通过前路不远，因为需要将重伤的士兵带到后方。 战争结束后，开始了新道路的建设。 而旧的仍然被遗弃。 有必要将墓地改道。 但这很难做到。 因此，只转移了姓名和名单，尸体仍留在地下。</string>
+    <string name="history">纪念碑的历史：</string>
+    <string name="history_monument">纪念碑历史</string>
+    <string name="current_location">当前位置</string>
+    <string name="menu">菜单</string>
+    <string name="build_route">建造路线</string>
+    <string name="add_location">新增位置</string>
+    <string name="choise_lang">选择语言</string>
+    <string name="feedback">意见反馈</string>
+    <string name="show_in_map">在地图上显示</string>
+    <string name="build">建立</string>
+    <string name="start">开始吧</string>
+    <string name="guide">您的旅行指南</string>
+    <string name="sightseeing">观光景点\ nnPENGCHENG区\ n莫尔曼地区</string>
+    <string name="distance">距离</string>
+    <string name="install_play_services">请安装Google Play服务以使用此应用程序</string>
+    <string name="photo">照片</string>
+    <string name="km">км</string>
+    <string name="m">м</string>
+</resources>
