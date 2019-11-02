@@ -23,6 +23,7 @@ import androidx.navigation.Navigation;
 import com.renewal_studio.pechengator.R;
 import com.renewal_studio.pechengator.common.LoadService;
 import com.renewal_studio.pechengator.contract.LanguageChoiseContract;
+import com.yariksoffice.lingver.Lingver;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +33,10 @@ import static com.renewal_studio.pechengator.utils.Constant.BROADCAST_ACTION;
 import static com.renewal_studio.pechengator.utils.Constant.CHI;
 import static com.renewal_studio.pechengator.utils.Constant.DEBUG_TAG;
 import static com.renewal_studio.pechengator.utils.Constant.ENG;
+import static com.renewal_studio.pechengator.utils.Constant.LANGUAGE_CHINESE;
+import static com.renewal_studio.pechengator.utils.Constant.LANGUAGE_ENGLISH;
+import static com.renewal_studio.pechengator.utils.Constant.LANGUAGE_NORSE;
+import static com.renewal_studio.pechengator.utils.Constant.LANGUAGE_RUSSIAN;
 import static com.renewal_studio.pechengator.utils.Constant.NOR;
 import static com.renewal_studio.pechengator.utils.Constant.RU;
 import static com.renewal_studio.pechengator.utils.Constant.SAVE_LANG;
@@ -64,18 +69,22 @@ public class LanguageChoiseFragment extends Fragment implements LanguageChoiseCo
         switch (view.getId()) {
             case R.id.lang_rus: {
                 lang = RU;
+                Lingver.getInstance().setLocale(getContext(), LANGUAGE_RUSSIAN);
                 break;
             }
             case R.id.lang_eng: {
                 lang = ENG;
+                Lingver.getInstance().setLocale(getContext(), LANGUAGE_ENGLISH);
                 break;
             }
             case R.id.lang_nor: {
                 lang = NOR;
+                Lingver.getInstance().setLocale(getContext(), LANGUAGE_NORSE);
                 break;
             }
             case R.id.lang_chi: {
                 lang = CHI;
+                Lingver.getInstance().setLocale(getContext(), LANGUAGE_CHINESE);
                 break;
             }
         }
@@ -86,6 +95,10 @@ public class LanguageChoiseFragment extends Fragment implements LanguageChoiseCo
         Intent msgIntent = new Intent(getContext(), LoadService.class);
         msgIntent.putExtra(LoadService.PARAM_IN_MSG, lang);
         getActivity().startService(msgIntent);
+        lang_rus.setEnabled(false);
+        lang_chi.setEnabled(false);
+        lang_nor.setEnabled(false);
+        lang_eng.setEnabled(false);
     }
 
     @Override

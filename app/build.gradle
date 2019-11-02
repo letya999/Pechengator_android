@@ -34,6 +34,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -59,6 +60,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-nop:1.7.25'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     implementation 'com.google.maps.android:android-maps-utils:0.5'
+    implementation "com.github.YarikSOffice:lingver:1.1.0"
 
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     testImplementation 'junit:junit:4.12'

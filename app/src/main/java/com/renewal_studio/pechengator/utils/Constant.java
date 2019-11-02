@@ -15,4 +15,8 @@ public class Constant {
     public static final String ENG = "eng";
     public static final String CHI = "chi";
     public final static String BROADCAST_ACTION = "rcom.renewal_studio.pechengator.servicebroadcast";
+    public final static String LANGUAGE_ENGLISH = "en";
+    public final static String LANGUAGE_CHINESE = "zh";
+    public final static String LANGUAGE_RUSSIAN = "ru";
+    public final static String LANGUAGE_NORSE = "se";
 }

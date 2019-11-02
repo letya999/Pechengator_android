@@ -383,6 +383,9 @@ public class RouteFragment extends Fragment implements OnMapReadyCallback, Route
                     showSnackbar();
             } else
                 showSnackbar();
+            if (from_lat == to_lat && from_lng == to_lng
+                    && from_lat != 0 && to_lat != 0)
+                showSnackbar();
         } catch (Exception e) {
             showSnackbar();
             e.printStackTrace();
@@ -390,7 +393,7 @@ public class RouteFragment extends Fragment implements OnMapReadyCallback, Route
     }
 
     public void showSnackbar() {
-        snackbar = Snackbar.make(getView(), "Ввод не может быть пустым", Snackbar.LENGTH_SHORT);
+        snackbar = Snackbar.make(getView(), "Unsupported input", Snackbar.LENGTH_SHORT);
         View snackbarView = snackbar.getView();
         snackbarView.setBackgroundColor(getResources().getColor(R.color.text_white_color));
         TextView snackTextView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text);
